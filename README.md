@@ -25,7 +25,18 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Build extension 
+
+    $ rake build
+
+### Launch test s
+
+    $ rake spec
+
+### Build extension 
+
+    $ rake compile
+
 
 ## Development
 
