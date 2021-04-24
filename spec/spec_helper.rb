@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "word2vec/rb"
+require "word2vec"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
