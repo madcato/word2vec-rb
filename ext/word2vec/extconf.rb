@@ -27,16 +27,16 @@ if enable_config("address-sanitizer")
   additional_prefixed_ldflags = [*additional_prefixed_ldflags, "-fsanitize=address"]
 end
 
-# unless (new_prefixed_cflags = additional_prefixed_cflags - $CFLAGS.split(/\s+/)).empty?
-#   $CFLAGS.prepend(new_prefixed_cflags.join(" ") << " ")
-# end
-#
-# unless (new_suffixed_cflags = additional_suffixed_cflags - $CFLAGS.split(/\s+/)).empty?
-#   $CFLAGS << " " << new_suffixed_cflags.join(" ")
-# end
-#
-# unless (new_prefixed_ldflags = additional_prefixed_ldflags - $LDFLAGS.split(/\s+/)).empty?
-#   $LDFLAGS.prepend(new_prefixed_ldflags.join(" ") << " ")
+unless (new_prefixed_cflags = additional_prefixed_cflags - $CFLAGS.split(/\s+/)).empty?
+  $CFLAGS.prepend(new_prefixed_cflags.join(" ") << " ")
+end
+
+unless (new_suffixed_cflags = additional_suffixed_cflags - $CFLAGS.split(/\s+/)).empty?
+  $CFLAGS << " " << new_suffixed_cflags.join(" ")
+end
+
+unless (new_prefixed_ldflags = additional_prefixed_ldflags - $LDFLAGS.split(/\s+/)).empty?
+  $LDFLAGS.prepend(new_prefixed_ldflags.join(" ") << " ")
 # end
 
 ## Check existence of functions before build
