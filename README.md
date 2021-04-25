@@ -1,11 +1,8 @@
 # word2vec-rb
 
-Gem for using word2vec functionality from https://code.google.com/archive/p/word2vec/
+Gem using word2vec functionality from https://code.google.com/archive/p/word2vec/
 
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/word2vec`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-This gem was developed using the `.c` files of the Google word2vec as base. Mostly by applying copy-and-paste legendary technique.
+This gem was developed using the `.c` files of the Google word2vec as base. Mostly by applying copy-and-paste.
 
 ## Installation
 
