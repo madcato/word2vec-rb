@@ -6,8 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.0.0] - 2021-04-24
+## [0.1.0] - 2021-04-25
 ### Added
+- Load word2vec model from bin file.
+- Find the nearest words to a given one.
+
 ### Changed
 ### Fixed
 ### Removed

@@ -11,3 +11,4 @@
 .rspec_status
 
 ext/word2vec/Makefile
+lib/word2vec/word2vec.bundle

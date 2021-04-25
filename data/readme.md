@@ -1,0 +1,1 @@
+File `minimal.bin` is only for testing purposes.
