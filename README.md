@@ -25,7 +25,7 @@ Or install it yourself as:
 
 ## Usage
 
-To find the nearest words, try:
+### To find the nearest words, try:
 
     require 'word2vec'
     
