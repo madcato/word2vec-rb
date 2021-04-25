@@ -37,7 +37,7 @@ end
 
 unless (new_prefixed_ldflags = additional_prefixed_ldflags - $LDFLAGS.split(/\s+/)).empty?
   $LDFLAGS.prepend(new_prefixed_ldflags.join(" ") << " ")
-# end
+end
 
 ## Check existence of functions before build
 # Check for the C11 [`getdelim`](http://pubs.opengroup.org/onlinepubs/9699919799/functions/getdelim.html) function.
