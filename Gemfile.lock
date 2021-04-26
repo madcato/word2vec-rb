@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    word2vec-rb (0.3.0)
+    word2vec-rb (0.2.0)
 
 GEM
   remote: https://rubygems.org/
