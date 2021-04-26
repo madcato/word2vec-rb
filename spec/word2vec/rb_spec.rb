@@ -24,5 +24,13 @@ RSpec.describe Word2vec do
     words = model.distance("from")
     expect(words.count).to eq(10)
     expect(words.first.first).to eq("that")
+    # words.each { |word| p word }
+  end
+  
+  it "check word analogy" do
+    model = Word2vec::Model.load(file_name)
+    words = model.analogy("from", "that", "international")
+    expect(words.count).to eq(7)
+    expect(words.first.first).to eq("is")
   end
 end

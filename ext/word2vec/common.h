@@ -9,7 +9,12 @@
 #include <stdlib.h>
 #include <sys/types.h>
 
-extern const long long N;  // number of closest words that will be shown
+// max length of strings
+extern const unsigned long max_size;
+// number of closest words that will be shown
+extern const long long N;
+// max length of vocabulary entries
+extern const long long max_w;
   
 typedef struct word2vec_model_s {
   long long word_count;
@@ -25,5 +30,6 @@ typedef struct WordSimilarity_s {
 
 void word2vec_model_load(word2vec_model* model, char* file_name);
 size_t word2vec_model_distance(word2vec_model* model, char* word, WordSimilarity word_list[]);
+size_t word2vec_model_analogy(word2vec_model* model, char* wordx1, char* wordy1, char* wordx2, WordSimilarity word_list[]);
 
 #endif /* _WORD2VEC_COMMON_H */

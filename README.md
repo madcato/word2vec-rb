@@ -22,12 +22,23 @@ Or install it yourself as:
 
 ## Usage
 
-### To find the nearest words, try:
+### Distance arithmetic: to find the nearest words, try:
 
     require 'word2vec'
     
     model = Word2vec::Model.load("./data/minimal.bin")
     words = model.distance("from")
+    words.each do |w| 
+      puts "#{w.first} #{w.last}"
+    end
+
+### Analogy arithmetic: to find the analogy with three words, try:
+
+    require 'word2vec'
+    
+    model = Word2vec::Model.load("./data/minimal.bin")
+    words = model.analogy("spain", "madrid", "france")
+    # In a well prepared vectors file (high quality), first word would be "Paris"
     words.each do |w| 
       puts "#{w.first} #{w.last}"
     end

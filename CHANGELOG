@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2021-04-26
+### Added
+- Analogy arithmetic. Find WY1 - WX1 + WX2 = WY1 , like V("madrid") - V("spain") + V("france") = V("paris")
+
 ## [0.1.0] - 2021-04-25
 ### Added
 - Load word2vec model from bin file.
