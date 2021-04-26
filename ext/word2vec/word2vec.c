@@ -113,6 +113,20 @@ static VALUE model_analogy(VALUE mod, VALUE rb_wordx1, VALUE rb_wordy1, VALUE rb
   return rb_ret;
 }
 
+/*
+ * model find the analog word to other three
+ * @param [String] rb_file_name 
+ */
+static VALUE model_accuracy(VALUE mod, VALUE rb_file_name) {
+  word2vec_model *model;
+  Data_Get_Struct(mod, word2vec_model, model);
+  char* filename = StringValueCStr(rb_file_name);
+
+  word2vec_model_accuracy(model, filename);
+  
+  return Qtrue;
+}
+
 void Init_word2vec(void) {
   VALUE mWord2vec = rb_define_module("Word2vec");
   VALUE mWord2vecModel = rb_define_class_under(mWord2vec, "Model", rb_cObject);
@@ -121,4 +135,5 @@ void Init_word2vec(void) {
   rb_define_method(mWord2vecModel, "vector_dim", model_vector_dim, 0);
   rb_define_method(mWord2vecModel, "distance", model_distance, 1);
   rb_define_method(mWord2vecModel, "analogy", model_analogy, 3);
+  rb_define_method(mWord2vecModel, "accuracy", model_accuracy, 1);
 }

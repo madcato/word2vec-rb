@@ -24,24 +24,49 @@ Or install it yourself as:
 
 ### Distance arithmetic: to find the nearest words, try:
 
-    require 'word2vec'
-    
-    model = Word2vec::Model.load("./data/minimal.bin")
-    words = model.distance("from")
-    words.each do |w| 
-      puts "#{w.first} #{w.last}"
-    end
+```ruby
+require 'word2vec'
+
+model = Word2vec::Model.load("./data/minimal.bin")
+words = model.distance("from")
+words.each do |w| 
+  puts "#{w.first} #{w.last}"
+end
+```
 
 ### Analogy arithmetic: to find the analogy with three words, try:
 
-    require 'word2vec'
-    
-    model = Word2vec::Model.load("./data/minimal.bin")
-    words = model.analogy("spain", "madrid", "france")
-    # In a well prepared vectors file (high quality), first word would be "Paris"
-    words.each do |w| 
-      puts "#{w.first} #{w.last}"
-    end
+```ruby
+require 'word2vec'
+
+model = Word2vec::Model.load("./data/minimal.bin")
+words = model.analogy("spain", "madrid", "france")
+# In a well prepared vectors file (high quality), first word would be "Paris"
+words.each do |w| 
+  puts "#{w.first} #{w.last}"
+end
+```
+
+### Accuray: test accuracy of the vectors:
+
+Define a file with the analogies to test, format:
+: section heading
+Word1 Word2 Word3 Word4
+
+Sample:
+
+    : capital-common-countries
+    Athens Greece Baghdad Iraq
+    Athens Greece Bangkok Thailand
+
+```ruby
+require 'word2vec'
+
+model = Word2vec::Model.load(file_name)
+model.accuracy("./data/questions-words.txt")
+
+# Outputs the results on terminal
+```
 
 ## Development
 

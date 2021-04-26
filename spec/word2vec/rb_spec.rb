@@ -33,4 +33,10 @@ RSpec.describe Word2vec do
     expect(words.count).to eq(7)
     expect(words.first.first).to eq("is")
   end
+  
+  it "check accuracy" do
+    model = Word2vec::Model.load(file_name)
+    model.accuracy("./data/questions-words.txt")
+    expect(true).to eq(true)
+  end
 end

@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.0] - 2021-04-26
+### Added
+- Accuracy. Meassure the quality of the vectors.
+
 ## [0.2.0] - 2021-04-26
 ### Added
 - Analogy arithmetic. Find WY1 - WX1 + WX2 = WY1 , like V("madrid") - V("spain") + V("france") = V("paris")
