@@ -68,6 +68,16 @@ model.accuracy("./data/questions-words.txt")
 # Outputs the results on terminal
 ```
 
+### Vocabulary: create a vocabulary file from a train file:
+
+```ruby
+require 'word2vec'
+
+Word2vec::Model.build\_vocab("./data/text7", "./data/vocab.txt")
+```
+
+The output file will have a list of words and its number of appearances separated by line break.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

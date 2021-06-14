@@ -11,3 +11,6 @@
 .rspec_status
 
 lib/word2vec/word2vec.bundle
+
+data/text7
+data/vocab.txt

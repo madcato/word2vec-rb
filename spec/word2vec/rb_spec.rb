@@ -1,5 +1,7 @@
 RSpec.describe Word2vec do
   file_name = "./data/minimal.bin"
+  train_file = "./data/text7"
+  vocab_file = "./data/vocab.txt"
 
   it "has a version number" do
     expect(Word2vec::VERSION).not_to be nil
@@ -38,5 +40,11 @@ RSpec.describe Word2vec do
     model = Word2vec::Model.load(file_name)
     model.accuracy("./data/questions-words.txt")
     expect(true).to eq(true)
+  end
+  
+  it "build vocab" do
+    File.delete(vocab_file) if File.exist?(vocab_file)
+    Word2vec::Model.build_vocab(train_file, vocab_file)
+    expect(File.exist?(vocab_file)).to eq(true)
   end
 end

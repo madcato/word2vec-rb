@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{Ruby interface to use word2vec arithmetic.}
   spec.description   = %q{To use this gem is required the file`vectors.bin` where is stored the output of the Google algorithm called `word2vec`. This gem doesn't produce this file. Once produced, this can can load it and use it to calculate some arithmetic operations like distance between words or to calculate the relations between them.'}
   spec.homepage      = "https://github.com/madcato/word2vec-rb"
-  spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
+  spec.required_ruby_version = Gem::Requirement.new(">= 2.7.1")
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/madcato/word2vec-rb"

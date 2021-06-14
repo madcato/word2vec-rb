@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] - 2021-06-14
+### Added
+- Vocabulary. Create a vocabulary file with its number of appearances.
+
 ## [0.3.0] - 2021-04-26
 ### Added
 - Accuracy. Meassure the quality of the vectors.

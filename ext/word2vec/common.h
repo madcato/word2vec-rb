@@ -33,5 +33,6 @@ void word2vec_model_load(word2vec_model* model, char* file_name);
 size_t word2vec_model_distance(word2vec_model* model, char* word, WordSimilarity word_list[]);
 size_t word2vec_model_analogy(word2vec_model* model, char* wordx1, char* wordy1, char* wordx2, WordSimilarity word_list[]);
 void word2vec_model_accuracy(word2vec_model* model, char* file_name);
+void word2vec_build_vocab(char* train, char* save_vocab_file);
 
 #endif /* _WORD2VEC_COMMON_H */

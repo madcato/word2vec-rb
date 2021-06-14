@@ -1,1 +1,1 @@
-File `minimal.bin` is only for testing purposes.
+Files in this directory are only for testing purposes.
