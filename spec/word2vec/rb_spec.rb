@@ -2,6 +2,7 @@ RSpec.describe Word2vec do
   file_name = "./data/minimal.bin"
   train_file = "./data/text7"
   vocab_file = "./data/vocab.txt"
+  output_file = "./data/tokenized.bin"
 
   it "has a version number" do
     expect(Word2vec::VERSION).not_to be nil
@@ -46,5 +47,12 @@ RSpec.describe Word2vec do
     File.delete(vocab_file) if File.exist?(vocab_file)
     Word2vec::Model.build_vocab(train_file, vocab_file)
     expect(File.exist?(vocab_file)).to eq(true)
+  end
+
+  it "tokenizer" do
+    File.delete(vocab_file) if File.exist?(vocab_file)
+    Word2vec::Model.build_vocab(train_file, vocab_file)
+    Word2vec::Model.tokenize(train_file, vocab_file, output_file)
+    expect(File.exist?(output_file)).to eq(true)
   end
 end

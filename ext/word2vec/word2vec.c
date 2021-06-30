@@ -141,6 +141,22 @@ static VALUE build_vocab(VALUE mod, VALUE rb_train_file_name, VALUE rb_vocab_fil
   return Qtrue;
 }
 
+/*
+ * tokenize a file
+ * @param [String] rb_train_file_name 
+ * @param [String] rb_vocab_file_name 
+ * @param [String] rb_output_file_name 
+ */
+static VALUE tokenize(VALUE mod, VALUE rb_train_file_name, VALUE rb_vocab_file_name, VALUE rb_output_file_name) {
+  char* train_filename = StringValueCStr(rb_train_file_name);
+  char* vocab_filename = StringValueCStr(rb_vocab_file_name);
+  char* output_filename = StringValueCStr(rb_output_file_name);
+
+  word2vec_tokenize(train_filename, vocab_filename, output_filename);
+
+  return Qtrue;
+}
+
 void Init_word2vec(void) {
   VALUE mWord2vec = rb_define_module("Word2vec");
   VALUE mWord2vecModel = rb_define_class_under(mWord2vec, "Model", rb_cObject);
@@ -151,4 +167,5 @@ void Init_word2vec(void) {
   rb_define_method(mWord2vecModel, "analogy", model_analogy, 3);
   rb_define_method(mWord2vecModel, "accuracy", model_accuracy, 1);
   rb_define_singleton_method(mWord2vecModel, "build_vocab", build_vocab, 2);
+  rb_define_singleton_method(mWord2vecModel, "tokenize", tokenize, 3);
 }
