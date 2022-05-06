@@ -85,7 +85,7 @@ This method requires a vocabulary file precreated.
 ```ruby
 require 'word2vec'
 
-Word2vec::Model.tokenize("./data/text7", "./data/vocab.txt", "./data/toekized.bin")
+Word2vec::Model.tokenize("./data/text7", "./data/vocab.txt", "./data/tokenized.bin")
 ```
 
 The output file will contain a sequence of binary identificators of each word of the input file.
@@ -94,6 +94,24 @@ Read output file with:
 
     long long id;
     fread(&id, sizeof(id), 1, fi);
+
+### Load the **word2vec** output bin file (*vectors.bin*), into ruby array
+
+```ruby
+require 'word2vec'
+
+vector_array = Word2vec::load_vectors("./data/minimal.bin")
+```
+
+The `vector_array` variable will contain an array of pairs with the vocab and the vector the float values of each word.
+
+Set parameter `normalize: true` to normalize the vectors.
+
+```ruby
+require 'word2vec'
+
+vector_array = Word2vec::Model.load_vectors("./data/minimal.bin", normalize: true)
+```
 
 ## Development
 
@@ -115,4 +133,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/madcato/word2vec-rb.
+Bug reports and pull requests are welcome on GitHub at https://github.com/madcato/word2vec-rb
